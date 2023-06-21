@@ -42,14 +42,14 @@ function randomNumberForGuess() {
   const redRandom = Math.round(Math.random() * 255);
   const blueRandom = Math.round(Math.random() * 255);
   const greenRandom = Math.round(Math.random() * 255);
-  criandoParagrafo.innerText = `rgb(${redRandom}, ${blueRandom}, ${greenRandom})`;
+  criandoParagrafo.innerText = `(${redRandom}, ${blueRandom}, ${greenRandom})`;
   const randomDiv = Math.round(Math.random() * 6) - 1;
   const divs = document.querySelectorAll('.ball');
   divs[randomDiv].style.backgroundColor = `rgb(${redRandom}, ${blueRandom}, ${greenRandom})`;
 }
 
 window.onload = () => {
-  colorTitleRandom();
   randomNumberForDivs();
   randomNumberForGuess();
+  colorTitleRandom();
 };
