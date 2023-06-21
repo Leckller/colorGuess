@@ -22,6 +22,7 @@ main {
   margin: 0 auto;
   margin-top: 200px;
   background-color: rgb(222, 230, 238);
+  border-radius: 20px;
   width: 500px;
   height: 50px;
 }
@@ -55,5 +56,12 @@ section {
 }
 
 #score {
-  text-align: center    ;
+  padding-top: 20px;
+  text-align: center;
+}
+
+#reset-game {
+  border-radius: 20px;
+  padding: 15px;
+  font-variant: small-caps;
 }
