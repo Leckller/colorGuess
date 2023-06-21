@@ -31,6 +31,18 @@ criandoParagrafo.id = 'rgb-color';
 criandoParagrafo.innerText = randomNumberForGuess();
 localMain.appendChild(criandoParagrafo);
 
+const criandoSection = document.createElement('section');
+criandoSection.id = 'sectionBalls';
+localMain.appendChild(criandoSection);
+const localSection = document.querySelector('#sectionBalls');
+
+for (let i = 1; i <= 6; i += 1) {
+  const criaDiv = document.createElement('div');
+  criaDiv.classList.add('ball');
+  criaDiv.style.backgroundColor = randomNumberForGuess();
+  localSection.appendChild(criaDiv);
+}
+
 window.onload = () => {
   colorTitleRandom();
 };
