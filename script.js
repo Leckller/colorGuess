@@ -68,6 +68,22 @@ function eventDivs() {
     });
   }
 }
+const criandoBotao = document.createElement('button');
+criandoBotao.id = 'reset-game';
+criandoBotao.innerText = 'Reset';
+localMain.appendChild(criandoBotao);
+const localBotaoReset = document.querySelector('#reset-game');
+
+localBotaoReset.addEventListener('click', () => {
+  const divs = document.querySelectorAll('.ball');
+  for (let i = 0; i <= 5; i += 1) {
+    const redRandom = Math.round(Math.random() * 255);
+    const blueRandom = Math.round(Math.random() * 255);
+    const greenRandom = Math.round(Math.random() * 255);
+    divs[i].style.backgroundColor = `rgb(${redRandom}, ${blueRandom}, ${greenRandom})`;
+  }
+  randomNumberForGuess();
+});
 
 window.onload = () => {
   randomNumberForDivs();
