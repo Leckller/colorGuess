@@ -43,13 +43,35 @@ function randomNumberForGuess() {
   const blueRandom = Math.round(Math.random() * 255);
   const greenRandom = Math.round(Math.random() * 255);
   criandoParagrafo.innerText = `(${redRandom}, ${blueRandom}, ${greenRandom})`;
-  const randomDiv = Math.round(Math.random() * 6) - 1;
+  const randomDiv = Math.round(Math.random() * 5);
   const divs = document.querySelectorAll('.ball');
   divs[randomDiv].style.backgroundColor = `rgb(${redRandom}, ${blueRandom}, ${greenRandom})`;
+}
+const criando2Paragrafo = document.createElement('p');
+criando2Paragrafo.id = 'answer';
+localMain.appendChild(criando2Paragrafo);
+const local2Paragrafo = document.querySelector('#answer');
+// const armazenamentoDeRespostas = ['Que pena você errou, tente mais uma vez!', 'Vish se pá q foi o errado', 'Passou perto... Talvez nem tanto', 'Sinto informar, mas você errou', 'Tá jogando de olhos fechados?', 'Foi uma boa tentativa'];
+function eventDivs() {
+  const texto = document.querySelector('#rgb-color');
+  const divs = document.querySelectorAll('.ball');
+  for (let i = 0; i < 6; i += 1) {
+    divs[i].addEventListener('click', (event) => {
+      if (event.target.style.backgroundColor.includes(texto.innerText)) {
+        local2Paragrafo.innerText = 'Acertou!';
+      }
+      else {
+        // const randomNumberResp = Math.round(Math.random() * 5);
+        // local2Paragrafo.innerText = armazenamentoDeRespostas[randomNumberResp];
+        local2Paragrafo.innerText = 'Errou! Tente novamente!';
+      }
+    });
+  }
 }
 
 window.onload = () => {
   randomNumberForDivs();
   randomNumberForGuess();
   colorTitleRandom();
+  eventDivs();
 };
