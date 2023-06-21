@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: aliceblue;
+}
+
+#cabecalho {
+  margin: 0 auto;
+}
+
+#title {
+  font-size: 45px;
+  font-variant: small-caps;
+  padding-top: 10px;
+  text-align: center;
+}
