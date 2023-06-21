@@ -17,3 +17,16 @@ html {
   padding-top: 10px;
   text-align: center;
 }
+
+main {
+  margin: 0 auto;
+  margin-top: 200px;
+  background-color: rgb(222, 230, 238);
+  width: 500px;
+  height: 50px;
+}
+
+#rgb-color {
+  padding-top: 15px;
+  text-align: center;
+}
