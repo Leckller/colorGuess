@@ -52,6 +52,14 @@ criando2Paragrafo.id = 'answer';
 localMain.appendChild(criando2Paragrafo);
 const local2Paragrafo = document.querySelector('#answer');
 // const armazenamentoDeRespostas = ['Que pena você errou, tente mais uma vez!', 'Vish se pá q foi o errado', 'Passou perto... Talvez nem tanto', 'Sinto informar, mas você errou', 'Tá jogando de olhos fechados?', 'Foi uma boa tentativa'];
+
+const criando3Paragrafo = document.createElement('p');
+criando3Paragrafo.id = 'score';
+criando3Paragrafo.innerText = '';
+cabecalho.appendChild(criando3Paragrafo);
+const localPontos = document.querySelector('#score');
+let pontos = 0;
+localPontos.innerText = `Pontos: ${pontos}`;
 function eventDivs() {
   const texto = document.querySelector('#rgb-color');
   const divs = document.querySelectorAll('.ball');
@@ -59,6 +67,8 @@ function eventDivs() {
     divs[i].addEventListener('click', (event) => {
       if (event.target.style.backgroundColor.includes(texto.innerText)) {
         local2Paragrafo.innerText = 'Acertou!';
+        pontos += 3;
+        localPontos.innerText = `Pontos: ${pontos}`;
       }
       else {
         // const randomNumberResp = Math.round(Math.random() * 5);
