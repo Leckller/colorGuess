@@ -82,6 +82,7 @@ localBotaoReset.addEventListener('click', () => {
     const greenRandom = Math.round(Math.random() * 255);
     divs[i].style.backgroundColor = `rgb(${redRandom}, ${blueRandom}, ${greenRandom})`;
   }
+  local2Paragrafo.innerText = 'Escolha uma cor';
   randomNumberForGuess();
 });
 
@@ -90,4 +91,5 @@ window.onload = () => {
   randomNumberForGuess();
   colorTitleRandom();
   eventDivs();
+  local2Paragrafo.innerText = 'Escolha uma cor';
 };
