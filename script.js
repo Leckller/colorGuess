@@ -26,7 +26,6 @@ const criandoSection = document.createElement('section');
 criandoSection.id = 'sectionBalls';
 localMain.appendChild(criandoSection);
 const localSection = document.querySelector('#sectionBalls');
-
 function randomNumberForDivs() {
   for (let i = 1; i <= 6; i += 1) {
     const redRandom = Math.round(Math.random() * 255);
@@ -58,8 +57,9 @@ criando3Paragrafo.id = 'score';
 criando3Paragrafo.innerText = '';
 cabecalho.appendChild(criando3Paragrafo);
 const localPontos = document.querySelector('#score');
-let pontos = 0;
-localPontos.innerText = `Pontos: ${pontos}`;
+const nAcertos = [];
+const mAcertos = 3;
+
 function eventDivs() {
   const texto = document.querySelector('#rgb-color');
   const divs = document.querySelectorAll('.ball');
@@ -67,10 +67,10 @@ function eventDivs() {
     divs[i].addEventListener('click', (event) => {
       if (event.target.style.backgroundColor.includes(texto.innerText)) {
         local2Paragrafo.innerText = 'Acertou!';
-        pontos += 3;
+        nAcertos.push('.');
+        const pontos = (mAcertos * nAcertos.length) + 0;
         localPontos.innerText = `Pontos: ${pontos}`;
-      }
-      else {
+      } else {
         // const randomNumberResp = Math.round(Math.random() * 5);
         // local2Paragrafo.innerText = armazenamentoDeRespostas[randomNumberResp];
         local2Paragrafo.innerText = 'Errou! Tente novamente!';
@@ -102,4 +102,5 @@ window.onload = () => {
   colorTitleRandom();
   eventDivs();
   local2Paragrafo.innerText = 'Escolha uma cor';
+  localPontos.innerText = 'Pontos: 0';
 };
