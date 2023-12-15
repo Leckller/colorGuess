@@ -50,7 +50,11 @@ const criando2Paragrafo = document.createElement('p');
 criando2Paragrafo.id = 'answer';
 localMain.appendChild(criando2Paragrafo);
 const local2Paragrafo = document.querySelector('#answer');
-// const armazenamentoDeRespostas = ['Que pena você errou, tente mais uma vez!', 'Vish se pá q foi o errado', 'Passou perto... Talvez nem tanto', 'Sinto informar, mas você errou', 'Tá jogando de olhos fechados?', 'Foi uma boa tentativa'];
+const armazenamentoDeRespostas = ['Que pena você errou, tente mais uma vez!',
+  'Vish se pá q foi o errado',
+  'Passou perto... Talvez nem tanto', 'Sinto informar, mas você errou',
+  'Tá jogando de olhos fechados?',
+  'Foi uma boa tentativa', 'Errou! Tente novamente!'];
 
 const criando3Paragrafo = document.createElement('p');
 criando3Paragrafo.id = 'score';
@@ -71,9 +75,9 @@ function eventDivs() {
         const pontos = (mAcertos * nAcertos.length) + 0;
         localPontos.innerText = `Pontos: ${pontos}`;
       } else {
-        // const randomNumberResp = Math.round(Math.random() * 5);
-        // local2Paragrafo.innerText = armazenamentoDeRespostas[randomNumberResp];
-        local2Paragrafo.innerText = 'Errou! Tente novamente!';
+        const randomNumberResp = Math.round(Math.random() * 6);
+        local2Paragrafo.innerText = armazenamentoDeRespostas[randomNumberResp];
+        // local2Paragrafo.innerText = 'Errou! Tente novamente!';
       }
     });
   }
